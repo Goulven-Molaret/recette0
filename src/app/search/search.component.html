@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Difficulté</th>
+    <th>Pays</th>
+    <th>Type</th>
+  </tr>
+  <tr *ngFor="let receipe of receipes">
+    <td>{{receipe.name}}</td>
+    <td>{{receipe.difficulty}}</td>
+    <td>{{receipe.country}}</td>
+    <td>{{receipe.type}}</td>
+    <td> <a routerLink="/new/{{receipe._id}}"><button>Modifier</button> </a></td>
+    <td><button (click)="delete(receipe._id)">Supprimer</button></td>
+  </tr>
+</table>

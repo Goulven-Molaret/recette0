@@ -1,0 +1,52 @@
+<table>
+  <tr>
+    <th>Ingrédients</th>
+    <th>Quantités</th>
+  </tr>
+  <tr *ngFor="let ingredient of ingredients">
+    <td>
+      {{ingredient.name}}
+    </td>
+    <td>
+      {{ingredient.quantity}}
+    </td>
+    <td>
+      {{ingredient.unit}}
+    </td>
+  </tr>
+  <tr *ngIf="adding">
+    <td>
+      <input [(ngModel)]="newIngredient.name" type="text" placeholder="Nom de l'ingrédient" />
+    </td>
+    <td>
+      <input [(ngModel)]="newIngredient.quantity" type ="text" placeholder="quantité" />
+    </td>
+    <td>
+      <select class="form-control" name="unit" [(ngModel)]="newIngredient.unit">
+        <option *ngFor="let unit of units" [value]="unit">{{unit}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr *ngIf="adding">
+    <td>
+      <button (click)="submit()">Valider</button>
+    </td>
+    <td *ngIf="addingUnit==false">
+      <button (click)="NewUnit()">Ajouter une unité</button>
+    </td>
+    <td *ngIf="addingUnit==true">
+      <input [(ngModel)]="newUnit" type="text" placeHolder="Nouvelle Unité">
+    </td>
+    <td *ngIf="addingUnit==true">
+      <button (click)="addUnit(newUnit)">Valider l'unité</button>
+    </td>
+  </tr>
+    <tr *ngIf="adding == false">
+      <td>
+          <button (click)="add()"> Ajouter un Ingrédient </button>
+        </td>
+        </tr>
+  
+   
+  
+</table>

@@ -1,0 +1,81 @@
+<div id="newContainer">
+  <div class="block">
+    <div class="Pays">
+      <div class="sideTitle">Pays :</div>
+      <ul>
+        <li *ngFor="let country of countries">
+          {{country}}
+        </li>
+      </ul>
+    </div>
+    <div class="Type">
+      <div class="sideTitle">Type</div>
+    </div>
+
+  </div>
+  <div class="block">
+    
+      
+      <div class="element">
+        
+        <div class="subelement">
+          
+            <div class="subsubelement">
+                <div class="form-group">
+                  <select class="form-control" id="pays" required name="Pays" [(ngModel)]="newReceipe.country">
+                    <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="type" required name="Type" [(ngModel)]="newReceipe.type" >
+                    <option *ngFor="let type of types" [value]="type">{{type}}</option>
+                    
+                  </select>
+                </div>
+            </div>
+          
+            <label>
+                <input [(ngModel)]="newReceipe.name" placeholder="Nom de la recette" required>
+            </label>
+        </div>
+          
+          <div class="subelement">
+              <form>
+                <label for="difficultyForm">
+                    <input name="difficultyForm" value="Facile" type ="radio" [(ngModel)]="newReceipe.difficulty">
+                    Facile
+                </label><br />
+                <label for="difficultyForm">
+                    <input name="difficultyForm" value="Moyen" type ="radio" [(ngModel)]="newReceipe.difficulty">
+                    Moyen
+                </label><br />
+                <label for="difficultyForm">
+                    <input name="difficultyForm" value="Compliqué" type ="radio" [(ngModel)]="newReceipe.difficulty">
+                    Compliqué
+                </label><br />
+                <label for="difficultyForm">
+                    <input name="difficultyForm" value="Extrêmement Complqué" type ="radio" [(ngModel)]="newReceipe.difficulty">
+                    Extrêmement Compliqué
+                </label><br />
+              </form>
+          </div>
+      
+       </div>
+    
+    <div class="element">
+        <app-ingredient [(ingredients)]="newReceipe.ingredients"></app-ingredient>
+    </div>
+    
+    <div class="element">
+        <textarea [(ngModel)]="newReceipe.description" name="explications" rows="20" cols="100" placeholder="Explications">
+        
+        </textarea>
+    </div>
+    
+    <div class="element">
+        <button type="submit" *ngIf="updating" (click)="update()">Valider la modification</button>
+        <button type="submit" *ngIf="!updating" (click)="valid()">  Valider</button>
+    </div>
+    
+  </div>
+</div>

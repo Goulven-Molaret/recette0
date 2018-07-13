@@ -1,0 +1,11 @@
+table{
+    margin: 10 px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+
+}
+td, th{
+    border: 1px solid black;
+}

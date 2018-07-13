@@ -1,0 +1,85 @@
+#newContainer
+{
+    border: 1px black solid;
+    display: flex;
+    height: 850px;
+}
+
+.block:nth-child(1)
+{
+    background-color: blueviolet;
+    flex: 1;
+}
+
+.block:nth-child(2)
+{
+    background-color:rgb(43, 226, 211);
+    flex: 3;
+}
+
+.Pays
+{
+    flex: 1;
+    height: 50%;
+    background-color: aliceblue;
+}
+
+.Type
+{
+    flex: 1;
+    height : 50%;
+    background-color: aquamarine;
+}
+
+.element
+{
+    border: 1px black solid;
+    display: flex;
+}
+.element:nth-child(1)
+{
+    justify-content: space-between;
+}
+
+.element:nth-child(4)
+{
+    justify-content: flex-end;
+}
+
+.subsubelement
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.subelement
+{
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.button
+{
+    cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  width: 50px
+
+}
+
+.ng-valid[required], .ng-valid.required {
+    border-right: 2px solid green;
+}
+
+.ng-invalid:not(form){
+    border-right: 5px solid red;
+}
+
+textarea{
+    margin: 10px;
+}
